@@ -1,0 +1,15 @@
+
+[
+    {
+        "username":"jane.moore442@nal.com",
+        "password":"Wrong!123"
+    },
+    {
+        "username":"june.moore442@nal.com",
+        "password":"Wrong!!123"
+    },
+    {
+        "username":"jane.moore442@gmail.com",
+        "password":"Wrong!123"
+    }
+] 
