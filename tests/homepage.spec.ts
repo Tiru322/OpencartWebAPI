@@ -1,16 +1,16 @@
 import {test,expect} from '@playwright/test';
 import { LoginPage } from "../src/pages/LoginPage";
-import { Homepage } from "../src/pages/HomePage";
+import { HomePage } from "../src/pages/HomePage";
 
 let loginPage:LoginPage;//as global variable, I can able to use other test also
 
-let homePage:Homepage; //as global variable, I can able to use other test also
+let homePage:HomePage; //as global variable, I can able to use other test also
 
 test.beforeEach(async({page})=>{ // here using the hooks concepts for repetative code and this
   loginPage = new LoginPage(page);//code will store in global variable as (loginPage)
     await loginPage.goToLoginPage();//for every page goToLoginPage() is the mandatory. for this reason we put in before each 
     await loginPage.doLogin('jane.moore442@nal.com','VJ{jnLG*h#nI');
-    homePage = new Homepage(page);
+    homePage = new HomePage(page);
 });
 //when click Run button,it will go to beforeEach and create the LoginPage object and Login after that
 //create the Homepage object, then jump into the test and validate with AAA pattern
