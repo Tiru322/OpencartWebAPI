@@ -28,7 +28,7 @@ export default defineConfig({
     video:"retain-on-failure",
    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless:true,
+    headless:!process.env.CI?false:true,
   },
 
   /* Configure projects for major browsers */
