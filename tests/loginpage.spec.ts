@@ -1,16 +1,16 @@
 
 import {test,expect} from '@playwright/test';
 import { LoginPage} from '../src/pages/LoginPage';
-import { Homepage } from '../src/pages/HomePage';
+import { HomePage } from '../src/pages/HomePage';
 
 let loginPage : LoginPage; //This is the globla variable
-let homePage: Homepage;
+let homePage: HomePage;
 
 
 test.beforeEach(async({page})=>{ // here using the hooks concepts for repetative code and this
   loginPage = new LoginPage(page);//code will store in global variable as (loginPage)
     await loginPage.goToLoginPage();
-    homePage = new Homepage(page); //Homepage object, if remove this object it will give null reference
+    homePage = new HomePage(page); //Homepage object, if remove this object it will give null reference
 });//that's why here mandatory to write the object
 
 test('verify loginpage test',async()=>{ //here page destructuring is not needed.
